@@ -1,13 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
+import styled from 'styled-components';
 import Item from '../Item';
 
+const BrankUL = styled.ul`
+  list-style-type: none;
+`
+
 const ItemList = ({ items=[] }) => (
-  <ul>
+  <BrankUL>
     {items.map((item, index) => (
       <Item key={index} {...item} />
     ))}
-  </ul>
+  </BrankUL>
 )
 
 ItemList.propTypes = {

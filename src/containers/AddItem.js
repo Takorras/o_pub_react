@@ -5,18 +5,23 @@ import { addItem } from '../actions';
 
 let AddItem = ({ dispatch }) => {
   let input;
+
   return (
     <div>
       <form
-        onSubmit={e => {
+        onSubmit={ e => {
           e.preventDefault();
-          dispatch(addItem(input));
-          input = ''
+          if (!input.value.trim()) {
+            return;
+          }
+          dispatch(addItem(input.value));
+          input.value = '';
         }}
       >
         <Input
-          onChange={(_, textInput ) => {
-            input = textInput.value
+          type='text'
+          ref={ node => {
+            input = node.inputRef;
           }}
         />
       </form>
