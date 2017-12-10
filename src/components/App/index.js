@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Board from '../Board';
-import ItemList from '../ItemList';
+import VisibleItemList from '../../containers/VisibleItemList';
 import AddItem from '../../containers/AddItem';
 
 const Wrapper = styled.div`
@@ -12,7 +12,7 @@ const App = () => (
   <Wrapper>
     <Board />
     <AddItem />
-    <ItemList />
+    <VisibleItemList />
   </Wrapper>
 )
 

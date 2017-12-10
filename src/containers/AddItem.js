@@ -10,15 +10,12 @@ let AddItem = ({ dispatch }) => {
       <form
         onSubmit={e => {
           e.preventDefault();
-          if (!input.value.trim()) {
-            return
-          }
-          dispatch(addItem(input.value))
-          input.value = ''
+          dispatch(addItem(input.value));
+          input.value = '';
         }}>
         <Input
           ref={node => {
-            input = node
+            input = node;
           }}
         />
       </form>
