@@ -7,10 +7,10 @@ const BrankUL = styled.ul`
   list-style-type: none;
 `
 
-const ItemList = ({ items=[] }) => (
+const ItemList = ({ items=[], onItemClick }) => (
   <BrankUL>
     {items.map((item, index) => (
-      <Item key={index} {...item} />
+      <Item key={index} {...item} onClick={() => onItemClick(index)} />
     ))}
   </BrankUL>
 )
@@ -22,7 +22,8 @@ ItemList.propTypes = {
       text: PropTypes.string.isRequired,
       point: PropTypes.number.isRequired
     })
-  ).isRequired
+  ).isRequired,
+  onItemClick: PropTypes.func.isRequired,
 }
 
 export default ItemList;
