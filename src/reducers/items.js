@@ -10,11 +10,11 @@ const items = (state = [], action) => {
         }
       ];
     case 'INCREASE_POINT':
-      return state.map(item => {
+      return state.map(item =>
         (item.id === action.id)
           ? {...item, point: item.point++}
           : item
-      });
+      );
     default:
       return state;
   }

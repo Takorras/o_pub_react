@@ -4,8 +4,8 @@ import { Label } from 'semantic-ui-react';
 
 const Item = ({ text, point }) => (
   <li>
-    <span text />
-    <Label point />
+    <span>{text}</span>
+    <Label>{point}</Label>
   </li>
 );
 

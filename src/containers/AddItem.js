@@ -10,12 +10,13 @@ let AddItem = ({ dispatch }) => {
       <form
         onSubmit={e => {
           e.preventDefault();
-          dispatch(addItem(input.value));
-          input.value = '';
-        }}>
+          dispatch(addItem(input));
+          input = ''
+        }}
+      >
         <Input
-          ref={node => {
-            input = node;
+          onChange={(_, textInput ) => {
+            input = textInput.value
           }}
         />
       </form>
