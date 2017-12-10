@@ -1,20 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Item from '../Item';
 
-const Wrapper = styled.div`
-  text-align: center;
-`
-
 const ItemList = ({ items=[] }) => (
-  <Wrapper>
-    <ul>
-      {items.map((item, index) => (
-        <Item key={index} {...item} />
-      ))}
-    </ul>
-  </Wrapper>
+  <ul>
+    {items.map((item, index) => (
+      <Item key={index} {...item} />
+    ))}
+  </ul>
 )
 
 ItemList.propTypes = {
