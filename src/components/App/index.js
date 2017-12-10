@@ -1,7 +1,10 @@
 import React from 'react';
+import Board from '../Board';
 
 const App = () => (
-  <div></div>
+  <div>
+    <Board />
+  </div>
 )
 
 export default App;
