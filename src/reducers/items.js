@@ -1,13 +1,9 @@
 const items = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_ITEM':
+    case 'LOAD_ITEMS':
       return [
         ...state,
-        {
-          id: action.id,
-          point: action.point,
-          text: action.text
-        }
+        ...action.data
       ];
     case 'INCREASE_POINT':
       return state.map(item =>
