@@ -11,11 +11,11 @@ const LiWrapper = styled.li`
   margin-bottom: 16px;
 `
 
-const Item = ({ text, point, onClick }) => (
+const Item = ({ text, point, onItemClick }) => (
   <LiWrapper>
     <span>{text}</span>
     <LabelWrapper>
-      <Label color='blue' onClick={onClick}>{point} オッ</Label>
+      <Label color='blue' onClick={onItemClick}>{point} オッ</Label>
     </LabelWrapper>
   </LiWrapper>
 );
@@ -23,7 +23,7 @@ const Item = ({ text, point, onClick }) => (
 Item.propTypes = {
   text: PropTypes.string.isRequired,
   point: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onItemClick: PropTypes.func.isRequired,
 }
 
 export default Item;

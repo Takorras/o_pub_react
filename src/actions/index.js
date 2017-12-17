@@ -6,7 +6,7 @@ let nextItemId = 0;
 
 export const fetchItems = () => {
   return dispatch => {
-    database.ref('items').once(
+    database.ref('items').on(
       'value',
       (snapshot) => { dispatch(loadItemsSuccess(snapshot.val())) },
       (error) => { dispatch(loadItemsError(error)) }
@@ -40,16 +40,14 @@ export const addItem = (id, text) => {
   }
 }
 
-export const addItemsSuccess = item => {
-  return {
-    type: 'ADD_ITEMS',
-    item: item
-  }
-}
-
-export const increasePoint = key => {
-  return {
-    type: 'INCREASE_POINT',
-    key
+export const increasePoint = (key, item) => {
+  return dispatch => {
+    database.ref('items')
+    .child(key)
+    .set({
+      id: item.id,
+      text: item.text,
+      point: item.point + 1
+    })
   }
 }

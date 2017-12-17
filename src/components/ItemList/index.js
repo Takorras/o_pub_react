@@ -10,7 +10,7 @@ const BrankUL = styled.ul`
 const ItemList = ({ items={}, onItemClick }) => (
   <BrankUL>
     {Object.keys(items).map(key => (
-      <Item key={key} {...items[key]} onClick={() => onItemClick(key)} />
+      <Item key={key} {...items[key]} onItemClick={() => onItemClick(key, items[key])} />
     ))}
   </BrankUL>
 )

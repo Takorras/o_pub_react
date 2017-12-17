@@ -8,9 +8,10 @@
 
 # production
 /build
+/functions
 
 # keys
-/src/components/config/index.js
+/src/config/index.js
 
 # misc
 .DS_Store

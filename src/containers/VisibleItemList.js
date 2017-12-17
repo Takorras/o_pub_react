@@ -8,8 +8,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onItemClick: id => {
-      dispatch(increasePoint(id));
+    onItemClick: (key, item) => {
+      dispatch(increasePoint(key, item));
     }
   }
 }
