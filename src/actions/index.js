@@ -3,7 +3,7 @@ import { firebaseConfig } from '../config';
 
 const database = firebase.initializeApp(firebaseConfig).database();
 
-export function fetchItems() {
+export const fetchItems = () => {
   return dispatch => {
     database.ref('items').on(
       'value',
@@ -14,10 +14,9 @@ export function fetchItems() {
 }
 
 export const loadItemsSuccess = items => {
-  console.log('hoge');
   return {
     type: 'LOAD_ITEMS',
-    data: items
+    items: items
   }
 }
 
@@ -28,11 +27,14 @@ export const loadItemsError = error => {
   }
 }
 
-export const addItem = text => {
-  database.ref('items').set({
-    text: text,
-    point: 0
-  })
+export const addItem = (id, text) => {
+  return dispatch => {
+    database.ref('items').push({
+      id: id,
+      text: text,
+      point: 0
+    })
+  }
 }
 
 export const increasePoint = id => {
