@@ -3,9 +3,7 @@ import ItemList from '../components/ItemList';
 import { increasePoint } from '../actions';
 
 const mapStateToProps = state => {
-  return {
-    items: state.items
-  };
+  return state;
 };
 
 const mapDispatchToProps = dispatch => {

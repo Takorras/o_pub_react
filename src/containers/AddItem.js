@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Input } from 'semantic-ui-react';
 import { addItem } from '../actions';
 
-let AddItem = ({ dispatch }) => {
+let AddItem = ({dispatch}) => {
   let input;
 
   return (
@@ -14,7 +14,7 @@ let AddItem = ({ dispatch }) => {
           if (!input.value.trim()) {
             return;
           }
-          dispatch(addItem(input.value));
+          dispatch(addItem(0, input.value));
           input.value = '';
         }}
       >
@@ -29,6 +29,4 @@ let AddItem = ({ dispatch }) => {
   )
 }
 
-AddItem = connect()(AddItem);
-
-export default AddItem;
+export default connect()(AddItem);
