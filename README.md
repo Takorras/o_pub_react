@@ -1,4 +1,4 @@
-### 原点にして頂点
+### もと
 https://github.com/gn-spawn/o_pub
 
 ### パクリモン
